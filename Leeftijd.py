@@ -16,11 +16,14 @@ __status__ = "Development"
 
 def main():
 
-    age  = int(input("What is your age?\n"))                                    #To know what age the person is
+    age = int(input("What is your age?\n"))                                     #To know what age the person is
     print(f" You were born in the year {2020 - age}.\n")                        #To find out what year they were born
-    print(f" You will be 50 in the year {2020 - age + 50}. ")                   #To know in what year they will be 50
 
+    if age < 50:
+        print(f" You will be 50 in the year {2020 - age + 50}. ")               #To know in what year they will be 50
 
+    else:
+        print(f"You were 50 in the year {2020 - (age - 50)}")                   #To know in what year they were 50
 
 if __name__ == '__main__':  # code to execute if called from command-line
     main()
