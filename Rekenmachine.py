@@ -30,27 +30,31 @@ def main():
     print("3.Multiply")
     print("4.Divide")
 
-    while True:
-        choice = input("Enter choice(1/2/3/4): ")                     #To let the user choose an input
 
-        if choice in ('1', '2', '3', '4'):                            #To check if the choice is one of the four options
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+    try:
+        choice = input("Enter choice(1/2/3/4): ")            # To let the user choose an input
 
-            if choice == '1':                                          #To use the 'add' function
-                print(num1, "+", num2, "=", add(num1, num2))
+        if choice in ('1', '2', '3', '4'):  # To check if the choice is one of the four options
+           num1 = float(input("Enter first number: "))
+           num2 = float(input("Enter second number: "))
 
-            elif choice == '2':                                        #To use the 'subtract' function
-                print(num1, "-", num2, "=", subtract(num1, num2))
+           if choice == '1':  # To use the 'add' function
+              print(num1, "+", num2, "=", add(num1, num2))
 
-            elif choice == '3':                                        #To use the 'multiply' function
-                print(num1, "*", num2, "=", multiply(num1, num2))
+           elif choice == '2':  # To use the 'subtract' function
+               print(num1, "-", num2, "=", subtract(num1, num2))
 
-            elif choice == '4':                                        #To use the 'divide' function
-                print(num1, "/", num2, "=", divide(num1, num2))
-            break
-        else:
-            print("Invalid Input")
+           elif choice == '3':  # To use the 'multiply' function
+               print(num1, "*", num2, "=", multiply(num1, num2))
+
+           elif choice == '4':  # To use the 'divide' function
+               print(num1, "/", num2, "=", divide(num1, num2))
+
+    except:
+       print("Invalid Input")
+       main()
+
+
 
 if __name__ == '__main__':  # code to execute if called from command-line
     main()
